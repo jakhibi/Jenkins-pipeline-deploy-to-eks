@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lifebit
+spec:
+  selector:
+    matchLabels:
+      app: lifebit
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: lifebit
+    spec:
+      containers:
+      - name: lifebit
+        image: lifebit
+        ports:
+        - containerPort: 80
